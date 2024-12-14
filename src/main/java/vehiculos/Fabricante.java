@@ -4,24 +4,33 @@ import java.util.ArrayList;
 public class Fabricante {
     private String nombre;
     private Pais pais;
-    private  static ArrayList<Fabricante> paises = new ArrayList<>(); // paises vendidos
-    public int vehiculosVendidos; // paises vendidos
+    private  static ArrayList<Fabricante> fabricas = new ArrayList<>(); // paises vendidos
+    private int vehiculosVendidos; // paises vendidos
 
     public Fabricante(String nombre, Pais pais) {
         this.nombre = nombre;
         this.pais = pais;
+        fabricas.add(this);
+    }
+    public Fabricante(){
+        fabricas.add(this);
     }
 
     public static Fabricante fabricaMayorVentas(){
         int valMax = 0;
         Fabricante fabricaMax = null;
-        for(Pais pais : paises){
-            if(pais.getVehiculosVendidos() > valMax){
-                valMax = pais.getVehiculosVendidos();
-                fabricaMax = pais;
+        for(Fabricante fabrica : fabricas){
+            if(fabrica.getVehiculosVendidos() > valMax){
+                valMax = fabrica.getVehiculosVendidos();
+                fabricaMax = fabrica;
             }
         }
         return fabricaMax; // país vendidos
+    }
+
+
+    public int getVehiculosVendidos(){
+        return this.vehiculosVendidos;
     }
 
     public String getNombre(){
