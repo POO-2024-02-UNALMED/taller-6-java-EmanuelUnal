@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Fabricante {
     private String nombre;
     private Pais pais;
-    private  static ArrayList<Fabricante> fabricas = new ArrayList<>(); // paises vendidos
-    private int vehiculosVendidos; // paises vendidos
+    private  static ArrayList<Fabricante> fabricas = new ArrayList<>();
+    private int vehiculosVendidos; 
 
     public Fabricante(String nombre, Pais pais) {
         this.nombre = nombre;
@@ -25,7 +25,7 @@ public class Fabricante {
                 fabricaMax = fabrica;
             }
         }
-        return fabricaMax; // país vendidos
+        return fabricaMax; 
     }
 
 
@@ -33,6 +33,10 @@ public class Fabricante {
         return this.vehiculosVendidos;
     }
 
+    public void incrementarVehiculosVendidos(){
+        this.vehiculosVendidos++;
+    }
+    
     public String getNombre(){
         return this.nombre;
     }

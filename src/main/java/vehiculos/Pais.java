@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Pais {
     private String nombre;
-    private  static ArrayList<Pais> paises = new ArrayList<>(); // paises vendidos
-    public int vehiculosVendidos; // paises vendidos
+    private  static ArrayList<Pais> paises = new ArrayList<>(); 
+    public int vehiculosVendidos;
 
     public Pais(){
         paises.add(this);
@@ -23,7 +23,7 @@ public class Pais {
                 paisMax = pais;
             }
         }
-        return paisMax; // país vendidos
+        return paisMax; 
     }
 
     public String getNombre(){
@@ -37,5 +37,8 @@ public class Pais {
     }
     public void setVehiculosVendidos(int vehiculosVendidos){
         this.vehiculosVendidos = vehiculosVendidos;
+    }
+    public void incrementarVehiculosVendidos(){
+        this.vehiculosVendidos++;
     }
 }
